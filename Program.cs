@@ -4,26 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Q3
+namespace Q4
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            MealCard st1 = new MealCard("Ahsan");
-            st1.Display();
-            st1.PurchaseFood(40);
-            st1.AddPoints(20);
+            Book[] book = new Book[2];
+            for (int i = 0; i < book.Length; i++)
+            {
+                book[i] = new Book();
+
+                book[i].Input();
+                Console.WriteLine("");
+            }
+            Console.Clear();
             Console.WriteLine("");
-            MealCard st2 = new MealCard("Ahsan", 50);
-            st2.Display();
-            st2.PurchaseFood(30);
-            st2.AddPoints(10);
+            for (int i = 0; i < book.Length; i++)
+            {
+                book[i].Display();
+                Console.WriteLine("");
+            }
+            Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("");
-            MealCard st3 = new MealCard("Ahsan", 25);
-            st3.Display();
-            st3.PurchaseFood(40);
-            st3.AddPoints(5);
+            Console.Write("Enter The Title of The Book You Want to Search: ");
+            string Titlebook = Console.ReadLine();
+            for (int i = 0; i < book.Length; i++)
+            {
+                book[i].Search(Titlebook);
+            }
         }
     }
 }
